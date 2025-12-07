@@ -1,37 +1,43 @@
 {
-	"compatibility_date": "2025-10-08",
-	"main": "src/server/index.ts",
-	"name": "idn",
-	"migrations": [
-		{
-			"new_sqlite_classes": ["Chat"],
-			"tag": "v1"
-		}
-	],
-	"assets": {
-		"directory": "./public",
-		"binding": "ASSETS",
-		"not_found_handling": "single-page-application"
-	},
-	"build": {
-		"command": "esbuild src/client/index.tsx --bundle --splitting --format=esm --platform=browser --outdir=public/dist"
-	},
-	"durable_objects": {
-		"bindings": [
-			{
-				"class_name": "Chat",
-				"name": "Chat"
-			}
-		]
-	},
-	"kv_namespaces": [
-		{
-			"binding": "IDN_KV",
-			"id": "219fa498808c4a2dbeea49426a9cc993"
-		}
-	],
-	"observability": {
-		"enabled": true
-	},
-	"upload_source_maps": true
+  "compatibility_date": "2025-10-08",
+  "main": "src/server/index.ts",
+  "name": "idn",
+  "migrations": [
+    {
+      "new_sqlite_classes": ["Chat"],
+      "tag": "v1"
+    }
+  ],
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application"
+  },
+  "build": {
+    "command": "esbuild src/client/index.tsx --bundle --splitting --format=esm --platform=browser --outdir=public/dist"
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "class_name": "Chat",
+        "name": "Chat"
+      }
+    ]
+  },
+  "kv_namespaces": [
+    {
+      "binding": "IDN_KV",
+      "id": "219fa498808c4a2dbeea49426a9cc993"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "IDN_R2",
+      "bucket_name": "idn-bucket"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  },
+  "upload_source_maps": true
 }
